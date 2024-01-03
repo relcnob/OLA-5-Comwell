@@ -9,7 +9,7 @@ class MyDocument extends Document {
             name="description"
             content="Meeting rooms, conference rooms, venues and lovely rooms. Comwell has it all. We aim high, also regarding sustainability, so you get the best experiences"
           />
-          <title>Comwell's hotels</title>
+          <title>Comwell&apos;s hotels</title>
         </Head>
         <body>
           <Main />
