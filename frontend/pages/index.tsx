@@ -44,10 +44,12 @@ function Index() {
     []
   );
 
+  console.log(process.env.NEXT_PUBLIC_BE_HOST);
+
   useEffect(() => {
     setArePkgLoading(true);
     setAreOffersLoading(true);
-    fetch(`${process.env.BE_HOST}/packages`)
+    fetch(`${process.env.NEXT_PUBLIC_BE_HOST}/packages`)
       .then((response) => response.json())
       .then((data: HotelPackage[]) => {
         setPackages(data);
@@ -57,7 +59,7 @@ function Index() {
         console.log(err);
       });
 
-    fetch(`${process.env.BE_HOST}/hotel-offers`)
+    fetch(`${process.env.NEXT_PUBLIC_BE_HOST}/hotel-offers`)
       .then((response) => response.json())
       .then((data: Offer[]) => {
         setOffers(data);

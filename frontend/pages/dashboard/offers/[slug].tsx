@@ -30,7 +30,7 @@ function Page() {
   useEffect(() => {
     setIsOfferDataLoading(true);
     const fetchData = async () => {
-      fetch(`${process.env.BE_HOST}/hotel-offers/${slug}`)
+      fetch(`${process.env.NEXT_PUBLIC_BE_HOST}/hotel-offers/${slug}`)
         .then((response) => response.json())
         .then((data: Offer) => {
           setOfferData(data);
@@ -52,7 +52,7 @@ function Page() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
     };
-    fetch(`${process.env.BE_HOST}/hotel-offers/${slug}`, options)
+    fetch(`${process.env.NEXT_PUBLIC_BE_HOST}/hotel-offers/${slug}`, options)
       .then((response) => response.json())
       .then((data) => {
         setModalContent("update");
@@ -67,7 +67,7 @@ function Page() {
     const options = {
       method: "DELETE",
     };
-    fetch(`${process.env.BE_HOST}/hotel-offers/${slug}`, options)
+    fetch(`${process.env.NEXT_PUBLIC_BE_HOST}/hotel-offers/${slug}`, options)
       .then((response) => response.json())
       .then((res) => {
         setModalContent("delete");

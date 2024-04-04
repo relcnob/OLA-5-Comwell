@@ -49,7 +49,7 @@ function Page() {
         href: formData.href,
       }),
     };
-    fetch(`${process.env.BE_HOST}/hotel-offers/`, options)
+    fetch(`${process.env.NEXT_PUBLIC_BE_HOST}/hotel-offers/`, options)
       .then((response) => response.json())
       .then((data) => {
         console.log(data);

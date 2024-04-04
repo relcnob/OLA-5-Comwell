@@ -17,7 +17,7 @@ function Page() {
 
   useEffect(() => {
     setAreHotelsLoading(true);
-    fetch(`${process.env.BE_HOST}/hotels`)
+    fetch(`${process.env.NEXT_PUBLIC_BE_HOST}/hotels`)
       .then((response) => response.json())
       .then((data: Hotel[]) => {
         setHotels(data);
@@ -32,7 +32,7 @@ function Page() {
     const options = {
       method: "DELETE",
     };
-    fetch(`${process.env.BE_HOST}/hotels/${id}`, options)
+    fetch(`${process.env.NEXT_PUBLIC_BE_HOST}/hotels/${id}`, options)
       .then((response) => response.json())
       .then((res) => {
         setModalState("finished");

@@ -73,7 +73,7 @@ function BookingConfirmation({
   };
 
   useEffect(() => {
-    fetch(`${process.env.BE_HOST}/bookings`, {
+    fetch(`${process.env.NEXT_PUBLIC_BE_HOST}/bookings`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

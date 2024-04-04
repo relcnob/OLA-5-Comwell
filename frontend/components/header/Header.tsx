@@ -89,7 +89,7 @@ function Header(props: Props) {
 
   useEffect(() => {
     setAreHotelsLoading(true);
-    fetch(`${process.env.BE_HOST}/hotels`)
+    fetch(`${process.env.NEXT_PUBLIC_BE_HOST}/hotels`)
       .then((response) => response.json())
       .then((data: Hotel[]) => {
         setHotels(data);

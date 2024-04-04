@@ -40,7 +40,7 @@ function Page() {
         price: formData.price,
       }),
     };
-    fetch(`${process.env.BE_HOST}/hotel-rooms/`, options)
+    fetch(`${process.env.NEXT_PUBLIC_BE_HOST}/hotel-rooms/`, options)
       .then((response) => response.json())
       .then((data) => {
         console.log(data);

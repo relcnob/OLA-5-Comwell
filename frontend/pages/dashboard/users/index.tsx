@@ -29,7 +29,7 @@ function Page() {
 
   useEffect(() => {
     setAreUsersLoading(true);
-    fetch(`${process.env.BE_HOST}/users`, {
+    fetch(`${process.env.NEXT_PUBLIC_BE_HOST}/users`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
@@ -51,7 +51,7 @@ function Page() {
     const options = {
       method: "DELETE",
     };
-    fetch(`${process.env.BE_HOST}/users/${id}`, options)
+    fetch(`${process.env.NEXT_PUBLIC_BE_HOST}/users/${id}`, options)
       .then((response) => response.json())
       .then((res) => {
         setModalState("finished");

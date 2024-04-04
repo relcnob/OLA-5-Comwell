@@ -11,13 +11,16 @@ export default function SignOutSection({
   const { onSignOutSuccess } = useContext(AuthContext);
 
   async function handleSignOut() {
-    const response = await fetch(`${process.env.BE_HOST}/auth/logout`, {
-      method: "GET",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      credentials: "include",
-    });
+    const response = await fetch(
+      `${process.env.NEXT_PUBLIC_BE_HOST}/auth/logout`,
+      {
+        method: "GET",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        credentials: "include",
+      }
+    );
     if (!response.ok) {
       return false;
     } else {

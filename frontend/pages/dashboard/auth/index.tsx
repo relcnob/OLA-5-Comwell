@@ -61,7 +61,7 @@ export default function SignInForm() {
       validators.loginEmail.validationFunction() &&
       validators.loginPassword.validationFunction()
     ) {
-      fetch(`${process.env.BE_HOST}/auth/login`, {
+      fetch(`${process.env.NEXT_PUBLIC_BE_HOST}/auth/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -84,7 +84,7 @@ export default function SignInForm() {
 
           const token = getCookie("token");
           const responseAdmin = await fetch(
-            `${process.env.BE_HOST}/auth/admin`,
+            `${process.env.NEXT_PUBLIC_BE_HOST}/auth/admin`,
             {
               method: "GET",
               headers: {

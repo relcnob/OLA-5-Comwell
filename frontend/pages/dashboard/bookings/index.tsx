@@ -20,7 +20,7 @@ function Page() {
 
   useEffect(() => {
     setAreBookingsLoading(true);
-    fetch(`${process.env.BE_HOST}/bookings`)
+    fetch(`${process.env.NEXT_PUBLIC_BE_HOST}/bookings`)
       .then((response) => response.json())
       .then((data: HotelBooking[]) => {
         console.log(data);
@@ -31,7 +31,7 @@ function Page() {
         console.log(err);
       });
 
-    fetch(`${process.env.BE_HOST}/hotels`)
+    fetch(`${process.env.NEXT_PUBLIC_BE_HOST}/hotels`)
       .then((response) => response.json())
       .then((data: Hotel[]) => {
         console.log(data);
@@ -46,7 +46,7 @@ function Page() {
     const options = {
       method: "DELETE",
     };
-    fetch(`${process.env.BE_HOST}/bookings/${id}`, options)
+    fetch(`${process.env.NEXT_PUBLIC_BE_HOST}/bookings/${id}`, options)
       .then((response) => response.json())
       .then((res) => {
         setModalState("finished");

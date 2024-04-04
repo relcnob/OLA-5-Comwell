@@ -18,7 +18,7 @@ function Page() {
 
   useEffect(() => {
     setAreOffersLoading(true);
-    fetch(`${process.env.BE_HOST}/hotel-offers`)
+    fetch(`${process.env.NEXT_PUBLIC_BE_HOST}/hotel-offers`)
       .then((response) => response.json())
       .then((data: Offer[]) => {
         setOffers(data);
@@ -33,7 +33,7 @@ function Page() {
     const options = {
       method: "DELETE",
     };
-    fetch(`${process.env.BE_HOST}/hotel-offers/${id}`, options)
+    fetch(`${process.env.NEXT_PUBLIC_BE_HOST}/hotel-offers/${id}`, options)
       .then((response) => response.json())
       .then((res) => {
         setModalState("finished");

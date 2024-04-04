@@ -119,7 +119,7 @@ export default function SignUpForm({
       !userExists
     ) {
       // Validation passed, proceed with the post request
-      fetch(`${process.env.BE_HOST}/auth/signup`, {
+      fetch(`${process.env.NEXT_PUBLIC_BE_HOST}/auth/signup`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -149,7 +149,7 @@ export default function SignUpForm({
           return response.json();
         })
         .then((data) => {
-          fetch(`${process.env.BE_HOST}/auth/login`, {
+          fetch(`${process.env.NEXT_PUBLIC_BE_HOST}/auth/login`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",

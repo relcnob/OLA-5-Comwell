@@ -31,7 +31,9 @@ function HotelInputDrawer({
         setLoading(true);
 
         try {
-          const response = await fetch(`${process.env.BE_HOST}/hotels`);
+          const response = await fetch(
+            `${process.env.NEXT_PUBLIC_BE_HOST}/hotels`
+          );
           if (!response.ok) {
             throw new Error("Something went wrong");
           }

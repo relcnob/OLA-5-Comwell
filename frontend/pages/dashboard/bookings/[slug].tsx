@@ -64,7 +64,7 @@ function Page() {
   useEffect(() => {
     setIsBookingDataLoading(true);
     const fetchData = async () => {
-      fetch(`${process.env.BE_HOST}/bookings/${slug}`)
+      fetch(`${process.env.NEXT_PUBLIC_BE_HOST}/bookings/${slug}`)
         .then((response) => response.json())
         .then((data: HotelBooking) => {
           console.log(data);
@@ -77,7 +77,7 @@ function Page() {
         });
 
       setIsHotelDataLoading(true);
-      fetch(`${process.env.BE_HOST}/hotels/`)
+      fetch(`${process.env.NEXT_PUBLIC_BE_HOST}/hotels/`)
         .then((response) => response.json())
         .then((data: Hotel[]) => {
           setHotels(data);
@@ -88,7 +88,7 @@ function Page() {
         });
 
       setIsPackageDataLoading(true);
-      fetch(`${process.env.BE_HOST}/packages/`)
+      fetch(`${process.env.NEXT_PUBLIC_BE_HOST}/packages/`)
         .then((response) => response.json())
         .then((data: HotelPackage[]) => {
           setPackages(data);
@@ -109,7 +109,7 @@ function Page() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
     };
-    fetch(`${process.env.BE_HOST}/bookings/${slug}`, options)
+    fetch(`${process.env.NEXT_PUBLIC_BE_HOST}/bookings/${slug}`, options)
       .then((response) => response.json())
       .then((data) => {
         setModalContent("update");
@@ -124,7 +124,7 @@ function Page() {
     const options = {
       method: "DELETE",
     };
-    fetch(`${process.env.BE_HOST}/bookings/${slug}`, options)
+    fetch(`${process.env.NEXT_PUBLIC_BE_HOST}/bookings/${slug}`, options)
       .then((response) => response.json())
       .then((res) => {
         setModalContent("delete");

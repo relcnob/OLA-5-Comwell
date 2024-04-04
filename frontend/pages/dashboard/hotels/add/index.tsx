@@ -101,7 +101,7 @@ function Page() {
   useEffect(() => {
     setIsHotelDataLoading(true);
     const fetchData = async () => {
-      fetch(`${process.env.BE_HOST}/packages`)
+      fetch(`${process.env.NEXT_PUBLIC_BE_HOST}/packages`)
         .then((response) => response.json())
         .then((data: HotelPackage[]) => {
           setExperiencePackages(data);
@@ -110,7 +110,7 @@ function Page() {
           console.log(err);
         });
 
-      fetch(`${process.env.BE_HOST}/hotel-offers`)
+      fetch(`${process.env.NEXT_PUBLIC_BE_HOST}/hotel-offers`)
         .then((response) => response.json())
         .then((data: Offer[]) => {
           setOffers(data);
@@ -119,7 +119,7 @@ function Page() {
           console.log(err);
         });
 
-      fetch(`${process.env.BE_HOST}/hotel-rooms`)
+      fetch(`${process.env.NEXT_PUBLIC_BE_HOST}/hotel-rooms`)
         .then((response) => response.json())
         .then((data: HotelRoom[]) => {
           setRooms(data);
@@ -138,7 +138,7 @@ function Page() {
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify(formData),
     };
-    fetch(`${process.env.BE_HOST}/hotels/`, options)
+    fetch(`${process.env.NEXT_PUBLIC_BE_HOST}/hotels/`, options)
       .then((response) => response.json())
       .then((data) => {
         setModalContent("update");

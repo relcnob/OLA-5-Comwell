@@ -53,7 +53,7 @@ function Page() {
         type: formData.type,
       }),
     };
-    fetch(`${process.env.BE_HOST}/packages/`, options)
+    fetch(`${process.env.NEXT_PUBLIC_BE_HOST}/packages/`, options)
       .then((response) => response.json())
       .then((data) => {
         console.log(data);
