@@ -22,6 +22,7 @@ import DateInputDrawer from "@/components/drawers/date/DateInputDrawer";
 import HotelInputDrawer from "@/components/drawers/hotel/HotelInputDrawer";
 import PeopleCountInputDrawer from "@/components/drawers/peopleCount/PeopleCountInputDrawer";
 import Layout from "@/app/layout";
+import "dotenv/config";
 
 function Index() {
   const [arePkgLoading, setArePkgLoading] = useState(false);

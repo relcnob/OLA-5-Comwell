@@ -7,6 +7,7 @@ import { getCookie } from "cookies-next";
 import { useRouter } from "next/navigation";
 import verifyAuth from "@/utils/verifyAuth";
 import Link from "next/link";
+import "dotenv/config";
 
 export default function SignInForm() {
   const router = useRouter();

@@ -1,6 +1,7 @@
 import Link from "next/link";
 import { useContext } from "react";
 import { AuthContext } from "@/context/AuthContext";
+import "dotenv/config";
 
 export default function SignOutSection({
   isLoginVisible,

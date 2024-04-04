@@ -12,6 +12,7 @@ import Link from "next/link";
 import { ValidatorType } from "@/utils/formTypes";
 import InputError from "@/components/formField/InputError";
 import { RoomValidators } from "@/utils/formTypes";
+import "dotenv/config";
 
 function Page() {
   const [isModalVisible, setIsModalVisible] = useState(false);

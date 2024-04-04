@@ -5,6 +5,7 @@ import { Hotel } from "@/utils/Hotel.types";
 import SelectionDrawer from "../SelectionDrawer";
 import { BeatLoader } from "react-spinners";
 import { BookingContext } from "@/context/BookingContext";
+import "dotenv/config";
 
 type HotelInputDrawerProps = {
   isOpen: boolean;

@@ -7,6 +7,7 @@ import Image from "next/image";
 import Link from "next/link";
 import Button from "@/components/button/Button";
 import { HotelPackage } from "@/utils/HotelPackage.types";
+import "dotenv/config";
 
 function Page() {
   const [packages, setPackages] = useState<HotelPackage[]>();

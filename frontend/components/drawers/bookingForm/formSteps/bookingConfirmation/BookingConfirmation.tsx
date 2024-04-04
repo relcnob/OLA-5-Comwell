@@ -11,6 +11,7 @@ import {
 } from "react";
 import Image from "next/image";
 import Button from "@/components/button/Button";
+import "dotenv/config";
 
 type BookingConfirmationProps = {
   onClose: () => void;

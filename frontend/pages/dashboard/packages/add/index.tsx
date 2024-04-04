@@ -11,6 +11,7 @@ import Link from "next/link";
 
 import { ValidatorType } from "@/utils/formTypes";
 import InputError from "@/components/formField/InputError";
+import "dotenv/config";
 
 function Page() {
   const [isModalVisible, setIsModalVisible] = useState(false);

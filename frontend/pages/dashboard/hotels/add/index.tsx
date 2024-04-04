@@ -15,6 +15,7 @@ import { Region } from "@/utils/Region.types";
 import { HotelPackage } from "@/utils/HotelPackage.types";
 import { Offer } from "@/utils/offer.types";
 import InputError from "@/components/formField/InputError";
+import "dotenv/config";
 
 function Page() {
   const [isModalVisible, setIsModalVisible] = useState(false);

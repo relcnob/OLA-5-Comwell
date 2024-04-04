@@ -7,6 +7,7 @@ import { useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import Button from "@/components/button/Button";
+import "dotenv/config";
 
 function Page() {
   const [offers, setOffers] = useState<Offer[]>();

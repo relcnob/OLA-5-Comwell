@@ -8,6 +8,7 @@ import Link from "next/link";
 import Button from "@/components/button/Button";
 import BookingList from "@/components/cms/bookingList/BookingList";
 import { Hotel } from "@/utils/Hotel.types";
+import "dotenv/config";
 
 function Page() {
   const [bookings, setBookings] = useState<HotelBooking[]>();

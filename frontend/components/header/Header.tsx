@@ -18,6 +18,7 @@ import HotelList from "../hotellist/HotelList";
 import SignInForm from "./userForms/SignInForm";
 import { AuthContext } from "@/context/AuthContext";
 import SignOutSection from "./SignOutSection";
+import "dotenv/config";
 
 type Props = {
   children?: React.ReactNode;

@@ -12,6 +12,7 @@ import { HotelPackage } from "@/utils/HotelPackage.types";
 import { Hotel } from "@/utils/Hotel.types";
 import { HotelRoom } from "@/utils/HotelRoom.types";
 import InputSelect from "@/components/formField/InputSelect";
+import "dotenv/config";
 
 function Page() {
   const [isModalVisible, setIsModalVisible] = useState(false);

@@ -6,6 +6,7 @@ import { useState, useRef, FormEvent, useEffect, useContext } from "react";
 import InputError from "@/components/formField/InputError";
 import { SignUpValidators } from "../../../utils/formTypes";
 import { AuthContext } from "@/context/AuthContext";
+import "dotenv/config";
 
 type Props = {
   isRegisterDrawerOpen: boolean;

@@ -4,6 +4,7 @@ import { useState, FormEvent, useContext } from "react";
 import { SignInValidators } from "../../../utils/formTypes";
 import InputError from "@/components/formField/InputError";
 import { AuthContext } from "@/context/AuthContext";
+import "dotenv/config";
 
 export default function SignInForm({
   toggleRegisterDrawer,

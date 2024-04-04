@@ -6,6 +6,7 @@ import Button from "@/components/button/Button";
 import { Hotel } from "@/utils/Hotel.types";
 import Spinner from "@/components/spinner/Spinner";
 import Image from "next/image";
+import "dotenv/config";
 
 function Page() {
   const [hotels, setHotels] = useState<Hotel[]>();

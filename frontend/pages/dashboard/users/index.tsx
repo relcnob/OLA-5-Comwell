@@ -6,7 +6,7 @@ import { useState } from "react";
 import Link from "next/link";
 import Button from "@/components/button/Button";
 import { getCookie } from "cookies-next";
-
+import "dotenv/config";
 type User = {
   _id: string;
   email: string;

@@ -1,4 +1,6 @@
 import { getCookie } from "cookies-next";
+import "dotenv/config";
+
 export default async function verifyAuth(endpoint: string) {
   const token = getCookie("token");
   const response = await fetch(`${process.env.BE_HOST}/auth/${endpoint}`, {

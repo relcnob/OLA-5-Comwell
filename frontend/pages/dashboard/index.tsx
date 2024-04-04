@@ -13,6 +13,7 @@ import { HotelPackage } from "@/utils/HotelPackage.types";
 import { HotelRoom } from "@/utils/HotelRoom.types";
 import Link from "next/link";
 import Layout from "@/app/layout";
+import "dotenv/config";
 
 import { useEffect, useState, ReactElement } from "react";
 

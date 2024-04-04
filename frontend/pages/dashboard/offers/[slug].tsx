@@ -8,6 +8,7 @@ import Spinner from "@/components/spinner/Spinner";
 import Button from "@/components/button/Button";
 import Link from "next/link";
 import { Offer } from "@/utils/offer.types";
+import "dotenv/config";
 
 function Page() {
   const [isModalVisible, setIsModalVisible] = useState(false);
