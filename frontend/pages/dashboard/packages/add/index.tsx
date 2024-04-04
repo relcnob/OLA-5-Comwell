@@ -52,7 +52,7 @@ function Page() {
         type: formData.type,
       }),
     };
-    fetch(`http://localhost:5000/packages/`, options)
+    fetch(`${process.env.BE_HOST}/packages/`, options)
       .then((response) => response.json())
       .then((data) => {
         console.log(data);

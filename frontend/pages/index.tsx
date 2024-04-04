@@ -46,7 +46,7 @@ function Index() {
   useEffect(() => {
     setArePkgLoading(true);
     setAreOffersLoading(true);
-    fetch("http://localhost:5000/packages")
+    fetch(`${process.env.BE_HOST}/packages`)
       .then((response) => response.json())
       .then((data: HotelPackage[]) => {
         setPackages(data);
@@ -56,7 +56,7 @@ function Index() {
         console.log(err);
       });
 
-    fetch("http://localhost:5000/hotel-offers")
+    fetch(`${process.env.BE_HOST}/hotel-offers`)
       .then((response) => response.json())
       .then((data: Offer[]) => {
         setOffers(data);

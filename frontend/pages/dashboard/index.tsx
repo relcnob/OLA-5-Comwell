@@ -36,7 +36,7 @@ function Index() {
   useEffect(() => {
     // BOOKINGS FETCH
     setAreBookingsLoading(true);
-    fetch("http://localhost:5000/bookings")
+    fetch(`${process.env.BE_HOST}/bookings`)
       .then((response) => response.json())
       .then((data: any[]) => {
         setBookings(data);
@@ -48,7 +48,7 @@ function Index() {
 
     // HOTEL FETCH
     setAreHotelsLoading(true);
-    fetch("http://localhost:5000/hotels")
+    fetch(`${process.env.BE_HOST}/hotels`)
       .then((response) => response.json())
       .then((data: any[]) => {
         setHotels(data);
@@ -60,7 +60,7 @@ function Index() {
 
     // PACKAGE FETCH
     setArePackagesLoading(true);
-    fetch("http://localhost:5000/packages")
+    fetch(`${process.env.BE_HOST}/packages`)
       .then((response) => response.json())
       .then((data: any[]) => {
         setPackages(data);
@@ -72,7 +72,7 @@ function Index() {
 
     // ROOM FETCH
     setAreRoomsLoading(true);
-    fetch("http://localhost:5000/hotel-rooms")
+    fetch(`${process.env.BE_HOST}/hotel-rooms`)
       .then((response) => response.json())
       .then((data: any[]) => {
         setRooms(data);
@@ -94,7 +94,7 @@ function Index() {
     const options = {
       method: "DELETE",
     };
-    fetch(`http://localhost:5000/bookings/${id}`, options)
+    fetch(`${process.env.BE_HOST}/bookings/${id}`, options)
       .then((response) => response.json())
       .then((res) => {
         setModalState("finished");

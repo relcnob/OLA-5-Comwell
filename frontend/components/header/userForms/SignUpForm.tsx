@@ -118,7 +118,7 @@ export default function SignUpForm({
       !userExists
     ) {
       // Validation passed, proceed with the post request
-      fetch("http://localhost:5000/auth/signup", {
+      fetch(`${process.env.BE_HOST}/auth/signup`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
@@ -148,7 +148,7 @@ export default function SignUpForm({
           return response.json();
         })
         .then((data) => {
-          fetch("http://localhost:5000/auth/login", {
+          fetch(`${process.env.BE_HOST}/auth/login`, {
             method: "POST",
             headers: {
               "Content-Type": "application/json",

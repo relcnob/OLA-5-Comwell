@@ -17,7 +17,7 @@ function Page() {
 
   useEffect(() => {
     setArePackagesLoading(true);
-    fetch("http://localhost:5000/packages")
+    fetch(`${process.env.BE_HOST}/packages`)
       .then((response) => response.json())
       .then((data: HotelPackage[]) => {
         setPackages(data);
@@ -32,7 +32,7 @@ function Page() {
     const options = {
       method: "DELETE",
     };
-    fetch(`http://localhost:5000/packages/${id}`, options)
+    fetch(`${process.env.BE_HOST}/packages/${id}`, options)
       .then((response) => response.json())
       .then((res) => {
         setModalState("finished");

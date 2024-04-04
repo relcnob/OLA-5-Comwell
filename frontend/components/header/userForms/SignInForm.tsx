@@ -51,7 +51,7 @@ export default function SignInForm({
       validators.loginEmail.validationFunction() &&
       validators.loginPassword.validationFunction()
     ) {
-      fetch("http://localhost:5000/auth/login", {
+      fetch(`${process.env.BE_HOST}/auth/login`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",

@@ -12,7 +12,11 @@ type HotelInputDrawerProps = {
   onSelect: (hotel: Hotel) => void;
 };
 
-function HotelInputDrawer({ isOpen, onClose, onSelect }: HotelInputDrawerProps) {
+function HotelInputDrawer({
+  isOpen,
+  onClose,
+  onSelect,
+}: HotelInputDrawerProps) {
   const [region, setRegion] = useState("All");
 
   const [loading, setLoading] = useState(false);
@@ -26,7 +30,7 @@ function HotelInputDrawer({ isOpen, onClose, onSelect }: HotelInputDrawerProps) 
         setLoading(true);
 
         try {
-          const response = await fetch("http://localhost:5000/hotels");
+          const response = await fetch(`${process.env.BE_HOST}/hotels`);
           if (!response.ok) {
             throw new Error("Something went wrong");
           }
@@ -36,7 +40,9 @@ function HotelInputDrawer({ isOpen, onClose, onSelect }: HotelInputDrawerProps) 
           if (error instanceof Error) {
             setError(error.message);
           } else {
-            setError("We were unable to fetch hotels at this time. Please try again later.");
+            setError(
+              "We were unable to fetch hotels at this time. Please try again later."
+            );
           }
           setLoading(false);
         } finally {
@@ -64,16 +70,43 @@ function HotelInputDrawer({ isOpen, onClose, onSelect }: HotelInputDrawerProps) 
     }
   };
 
-  const filteredHotels = region === "All" ? hotels : hotels.filter((hotel) => hotel.region === region);
+  const filteredHotels =
+    region === "All"
+      ? hotels
+      : hotels.filter((hotel) => hotel.region === region);
 
   return (
-    <SelectionDrawer isOpen={isOpen} onClose={onClose} onSelect={handleConfirmSelect} title="Hotels">
-      <TabGroup activeTab={region} onTabChange={setRegion} tabs={["All", "Zealand", "Funen", "Jutland"]} />
+    <SelectionDrawer
+      isOpen={isOpen}
+      onClose={onClose}
+      onSelect={handleConfirmSelect}
+      title="Hotels"
+    >
+      <TabGroup
+        activeTab={region}
+        onTabChange={setRegion}
+        tabs={["All", "Zealand", "Funen", "Jutland"]}
+      />
       {/* loop through hotels */}
       <ul className="flex flex-col gap-1">
-        {loading && <BeatLoader loading={loading} size={15} className="flex justify-center items-center mt-80" />}
+        {loading && (
+          <BeatLoader
+            loading={loading}
+            size={15}
+            className="flex justify-center items-center mt-80"
+          />
+        )}
         {error && <p>{error}</p>}
-        {!loading && !error && filteredHotels.map((hotel: Hotel) => <HotelCard key={hotel.name} hotel={hotel} isSelected={hotel === selectedHotel} onSelect={handleHotelSelect} />)}
+        {!loading &&
+          !error &&
+          filteredHotels.map((hotel: Hotel) => (
+            <HotelCard
+              key={hotel.name}
+              hotel={hotel}
+              isSelected={hotel === selectedHotel}
+              onSelect={handleHotelSelect}
+            />
+          ))}
       </ul>
     </SelectionDrawer>
   );

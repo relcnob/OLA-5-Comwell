@@ -31,7 +31,7 @@ function Page() {
   useEffect(() => {
     setIsUserDataLoading(true);
     const fetchData = async () => {
-      fetch(`http://localhost:5000/users/${slug}`)
+      fetch(`${process.env.BE_HOST}/users/${slug}`)
         .then((response) => response.json())
         .then((data: User) => {
           setUserData(data);
@@ -59,7 +59,7 @@ function Page() {
             : formData.roles.split(", "),
       }),
     };
-    fetch(`http://localhost:5000/users/${slug}`, options)
+    fetch(`${process.env.BE_HOST}/users/${slug}`, options)
       .then((response) => response.json())
       .then((data) => {
         setModalContent("update");
@@ -74,7 +74,7 @@ function Page() {
     const options = {
       method: "DELETE",
     };
-    fetch(`http://localhost:5000/users/${slug}`, options)
+    fetch(`${process.env.BE_HOST}/users/${slug}`, options)
       .then((response) => response.json())
       .then((res) => {
         setModalContent("delete");

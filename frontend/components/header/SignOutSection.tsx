@@ -10,7 +10,7 @@ export default function SignOutSection({
   const { onSignOutSuccess } = useContext(AuthContext);
 
   async function handleSignOut() {
-    const response = await fetch("http://localhost:5000/auth/logout", {
+    const response = await fetch(`${process.env.BE_HOST}/auth/logout`, {
       method: "GET",
       headers: {
         "Content-Type": "application/json",

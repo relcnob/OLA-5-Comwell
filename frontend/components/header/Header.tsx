@@ -88,7 +88,7 @@ function Header(props: Props) {
 
   useEffect(() => {
     setAreHotelsLoading(true);
-    fetch("http://localhost:5000/hotels")
+    fetch(`${process.env.BE_HOST}/hotels`)
       .then((response) => response.json())
       .then((data: Hotel[]) => {
         setHotels(data);

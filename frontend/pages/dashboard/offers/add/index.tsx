@@ -48,7 +48,7 @@ function Page() {
         href: formData.href,
       }),
     };
-    fetch(`http://localhost:5000/hotel-offers/`, options)
+    fetch(`${process.env.BE_HOST}/hotel-offers/`, options)
       .then((response) => response.json())
       .then((data) => {
         console.log(data);

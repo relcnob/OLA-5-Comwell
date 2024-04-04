@@ -72,7 +72,7 @@ function BookingConfirmation({
   };
 
   useEffect(() => {
-    fetch("http://localhost:5000/bookings", {
+    fetch(`${process.env.BE_HOST}/bookings`, {
       method: "POST",
       headers: {
         "Content-Type": "application/json",

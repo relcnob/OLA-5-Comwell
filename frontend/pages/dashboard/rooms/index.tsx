@@ -17,7 +17,7 @@ function Page() {
 
   useEffect(() => {
     setAreRoomsLoading(true);
-    fetch("http://localhost:5000/hotel-rooms")
+    fetch(`${process.env.BE_HOST}/hotel-rooms`)
       .then((response) => response.json())
       .then((data: HotelRoom[]) => {
         setRooms(data);
@@ -32,7 +32,7 @@ function Page() {
     const options = {
       method: "DELETE",
     };
-    fetch(`http://localhost:5000/hotel-rooms/${id}`, options)
+    fetch(`${process.env.BE_HOST}/hotel-rooms/${id}`, options)
       .then((response) => response.json())
       .then((res) => {
         setModalState("finished");
