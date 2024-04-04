@@ -46,7 +46,7 @@ export class AuthController {
       await this.authService.signIn(signInDto.email, signInDto.password)
     ).access_token;
     if (token) {
-      response.cookie('token', token, { secure: false, sameSite: undefined });
+      response.cookie('token', token, { secure: false, sameSite: "None" });
       return this.authService.signIn(signInDto.email, signInDto.password);
     }
   }
