@@ -4,6 +4,7 @@ import { useState, FormEvent, useContext } from "react";
 import { SignInValidators } from "../../../utils/formTypes";
 import InputError from "@/components/formField/InputError";
 import { AuthContext } from "@/context/AuthContext";
+import { setCookie } from "cookies-next";
 import "dotenv/config";
 
 export default function SignInForm({
@@ -76,6 +77,8 @@ export default function SignInForm({
           return response.json();
         })
         .then((data) => {
+          console.log(data);
+          setCookie("token_fe", data.access_token);
           // remove error if the login was successful
           setUnauthorizedError(false);
           console.log("Response:", "login was successful");

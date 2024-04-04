@@ -9,7 +9,7 @@ export default async function verifyAuth(endpoint: string) {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${getCookie("token")}`,
+        Authorization: `Bearer ${getCookie("token_fe")}`,
       },
       credentials: "include",
     }

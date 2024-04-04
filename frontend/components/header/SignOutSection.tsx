@@ -22,6 +22,7 @@ export default function SignOutSection({
       }
     );
     if (!response.ok) {
+      console.log(response);
       return false;
     } else {
       onSignOutSuccess();
