@@ -44,8 +44,6 @@ function Index() {
     []
   );
 
-  console.log(process.env.NEXT_PUBLIC_BE_HOST);
-
   useEffect(() => {
     setArePkgLoading(true);
     setAreOffersLoading(true);

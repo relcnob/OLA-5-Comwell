@@ -3,7 +3,7 @@ import { useState, FormEvent, useContext, useEffect } from "react";
 import { SignInValidators } from "../../../utils/formTypes";
 import InputError from "@/components/formField/InputError";
 import { AuthContext } from "@/context/AuthContext";
-import { getCookie } from "cookies-next";
+import { getCookie, getCookies } from "cookies-next";
 import { useRouter } from "next/navigation";
 import verifyAuth from "@/utils/verifyAuth";
 import Link from "next/link";

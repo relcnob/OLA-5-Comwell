@@ -1,19 +1,22 @@
-import { getCookie } from "cookies-next";
+import { getCookie, getCookies, setCookie } from "cookies-next";
 import "dotenv/config";
 
 export default async function verifyAuth(endpoint: string) {
-  const token = getCookie("token");
+  // const token = await ;
   const response = await fetch(
     `${process.env.NEXT_PUBLIC_BE_HOST}/auth/${endpoint}`,
     {
       method: "GET",
       headers: {
         "Content-Type": "application/json",
-        Authorization: `Bearer ${token}`,
+        Authorization: `Bearer ${getCookie("token")}`,
       },
       credentials: "include",
     }
   );
+  setCookie("test", "test");
+  console.log(getCookies());
+
   if (!response.ok) {
     return { isAuthenticated: false, userData: null };
   }
