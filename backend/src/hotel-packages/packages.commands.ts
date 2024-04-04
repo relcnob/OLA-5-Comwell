@@ -46,7 +46,7 @@ export class PackagesCommand {
         'Blissful Break',
         'Gastronomy',
         ['Coffee and cake', 'Welcome drink', '3 course dinner/buffet'],
-        'Cosy afternoon coffee with cake - and later 3-course dinner',
+        'Cozy afternoon coffee with cake - and later 3-course dinner',
         `https://cdn.dwarf.dk/comwell-cms-production/img/containers/main/hoteller/cbo/restaurant/comwell-borupgaard-restaurant-skaldyrsaften-01.jpg/23b9c51a7c7c4814eaa67769d713f2e1.jpg`,
         1.2,
         0,

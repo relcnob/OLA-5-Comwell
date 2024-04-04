@@ -13,7 +13,7 @@ import 'dotenv/config';
   imports: [
     // get db_host from .env for mongo
     MongooseModule.forRoot(
-      `mongodb://${process.env.BE_HOST}:27017/comwell_test`,
+      `mongodb://${process.env.DB_HOST}:27017/comwell_test`,
     ),
     HotelsModule,
     PackagesModule,
