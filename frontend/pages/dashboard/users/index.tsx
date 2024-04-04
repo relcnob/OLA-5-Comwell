@@ -25,7 +25,7 @@ function Page() {
   const [modalState, setModalState] = useState("confirmation");
   const [modalUser, setModalUser] = useState<User>();
 
-  const token = getCookie("token");
+  const token = getCookie("token_fe");
 
   useEffect(() => {
     setAreUsersLoading(true);
