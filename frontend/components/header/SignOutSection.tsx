@@ -2,6 +2,7 @@ import Link from "next/link";
 import { useContext } from "react";
 import { AuthContext } from "@/context/AuthContext";
 import "dotenv/config";
+import { deleteCookie } from "cookies-next";
 
 export default function SignOutSection({
   isLoginVisible,
@@ -25,6 +26,7 @@ export default function SignOutSection({
       console.log(response);
       return false;
     } else {
+      deleteCookie("token_fe");
       onSignOutSuccess();
     }
   }

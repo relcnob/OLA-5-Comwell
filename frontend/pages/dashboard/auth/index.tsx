@@ -3,7 +3,7 @@ import { useState, FormEvent, useContext, useEffect } from "react";
 import { SignInValidators } from "../../../utils/formTypes";
 import InputError from "@/components/formField/InputError";
 import { AuthContext } from "@/context/AuthContext";
-import { getCookie, getCookies } from "cookies-next";
+import { getCookie, getCookies, setCookie } from "cookies-next";
 import { useRouter } from "next/navigation";
 import verifyAuth from "@/utils/verifyAuth";
 import Link from "next/link";
@@ -82,7 +82,7 @@ export default function SignInForm() {
             });
           }
 
-          const token = getCookie("token");
+          const token = getCookie("token_fe");
           const responseAdmin = await fetch(
             `${process.env.NEXT_PUBLIC_BE_HOST}/auth/admin`,
             {
@@ -110,6 +110,7 @@ export default function SignInForm() {
         })
         .then((data) => {
           // remove error if the login was successful
+          setCookie("token_fe", data.access_token);
           setUnauthorizedError(false);
           setErrorText("");
           console.log("Response:", "login was successful");
