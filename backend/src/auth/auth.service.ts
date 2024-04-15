@@ -59,14 +59,13 @@ export class AuthService {
   }
 
   signOut(response: Response) {
-    if (response.req.cookies.token_fe) {
+    if (response) {
       // response.clearCookie('token').status(200).json({
       //   message: 'You have logged out',
       // });
       response.status(200).json({
         message: 'You have logged out',
       });
-      
     } else {
       response.status(401).json({
         error: 'Invalid jwt',
