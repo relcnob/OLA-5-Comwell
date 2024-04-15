@@ -14,7 +14,6 @@ export default async function verifyAuth(endpoint: string) {
       credentials: "include",
     }
   );
-  console.log(getCookies());
 
   if (!response.ok) {
     return { isAuthenticated: false, userData: null };
