@@ -59,7 +59,7 @@ export class AuthService {
   }
 
   signOut(response: Response) {
-    if (response.req.cookies.token) {
+    if (response.req.cookies.token_fe) {
       // response.clearCookie('token').status(200).json({
       //   message: 'You have logged out',
       // });
