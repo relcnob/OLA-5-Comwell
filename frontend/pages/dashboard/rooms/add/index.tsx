@@ -73,10 +73,7 @@ function Page() {
     roomDescription: {
       fieldName: "roomDescription",
       validationFunction: () =>
-        formData.description.match(/^[a-zA-Z\s]*$/) &&
-        formData.description.length > 0
-          ? true
-          : false,
+        formData.description.length > 0 ? true : false,
     },
     roomImage: {
       fieldName: "roomImage",
